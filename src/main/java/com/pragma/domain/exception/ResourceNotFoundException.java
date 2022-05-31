@@ -1,4 +1,4 @@
-package com.pragma.cliente.exception;
+package com.pragma.domain.exception;
 
 public class ResourceNotFoundException extends RuntimeException{
     public ResourceNotFoundException(String recurso, Long id){

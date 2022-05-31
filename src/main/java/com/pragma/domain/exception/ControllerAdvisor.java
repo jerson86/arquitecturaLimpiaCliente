@@ -1,6 +1,6 @@
-package com.pragma.cliente.exception;
+package com.pragma.domain.exception;
 
-import com.pragma.cliente.util.Message;
+import com.pragma.application.util.Message;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

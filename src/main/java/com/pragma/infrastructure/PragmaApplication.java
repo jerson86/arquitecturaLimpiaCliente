@@ -1,4 +1,4 @@
-package com.pragma.cliente;
+package com.pragma.infrastructure;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
