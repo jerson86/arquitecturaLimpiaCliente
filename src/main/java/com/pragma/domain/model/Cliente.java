@@ -1,4 +1,4 @@
-package com.pragma.domain;
+package com.pragma.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
