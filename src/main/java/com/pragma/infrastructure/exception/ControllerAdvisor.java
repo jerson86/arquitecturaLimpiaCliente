@@ -1,5 +1,6 @@
 package com.pragma.infrastructure.exception;
 
+import com.pragma.domain.exception.ResourceNotFoundException;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -21,8 +22,7 @@ public class ControllerAdvisor  extends ResponseEntityExceptionHandler {
 
     public static final String TRACE = "trace";
 
-    @Value("${reflectoring.trace:false}")
-    private boolean printStackTrace;
+
 
     @Override
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
@@ -62,7 +62,7 @@ public class ControllerAdvisor  extends ResponseEntityExceptionHandler {
                                                       HttpStatus httpStatus,
                                                       WebRequest request) {
         ErrorResponse errorResponse = new ErrorResponse(httpStatus.value(), message);
-        if (printStackTrace && isTraceOn(request)) {
+        if (isTraceOn(request)) {
             errorResponse.setStackTrace(ExceptionUtils.getStackTrace(exception));
         }
         return ResponseEntity.status(httpStatus).body(errorResponse);
@@ -84,5 +84,11 @@ public class ControllerAdvisor  extends ResponseEntityExceptionHandler {
             WebRequest request) {
 
         return buildErrorResponse(ex, status, request);
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<Object> handleNotFoundException(
+            ResourceNotFoundException exception, WebRequest request) {
+        return buildErrorResponse(exception, "No se encontraron registros", HttpStatus.NOT_FOUND, request);
     }
 }

@@ -16,12 +16,10 @@ public class ClienteMapper {
 
     // convert DTO to Entity
     public Cliente mapToModel(ClienteDTO clienteDTO){
-
         return modelMapper.map(clienteDTO,Cliente.class);
     }
     // convert entity to DTO
     public ClienteDTO mapToDTO(Cliente cliente){
-
         return modelMapper.map(cliente, ClienteDTO.class);
     }
 

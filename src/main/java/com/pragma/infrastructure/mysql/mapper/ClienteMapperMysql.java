@@ -13,12 +13,22 @@ public class ClienteMapperMysql {
 
     // convert DTO to Entity
     public ClienteEntity mapToEntity(Cliente cliente){
-
-        return modelMapper.map(cliente,ClienteEntity.class);
+        try{
+            return modelMapper.map(cliente,ClienteEntity.class);
+        }catch (Exception e){
+            System.err.println(e);
+            e.toString();
+        }
+        return null;
     }
     // convert entity to Model
     public Cliente mapToModel(ClienteEntity clienteEntity){
-
-        return modelMapper.map(clienteEntity, Cliente.class);
+        try{
+            modelMapper.map(clienteEntity, Cliente.class);
+        }catch (Exception e){
+            System.err.println(e);
+            e.toString();
+        }
+        return null;
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public class ClienteRestController {
     private final ClienteService clienteService;
-
+    @Autowired
     private ClienteMapper clienteMapper;
 
     public ClienteRestController(ClienteService clienteService) {
@@ -22,7 +22,7 @@ public class ClienteRestController {
 
     @RequestMapping(value = "api/clientes", method = RequestMethod.GET)
     public ResponseEntity<List<ClienteDTO>> getAllClientes(){
-        return  ResponseEntity.ok().body(
+       return  ResponseEntity.ok().body(
                 clienteMapper.mapToDTOList(
                         clienteService.getAllClientes()
                 )

@@ -6,8 +6,10 @@ import com.pragma.domain.port.outbound.PersistCliente;
 import com.pragma.infrastructure.mysql.entity.ClienteEntity;
 import com.pragma.infrastructure.mysql.mapper.ClienteMapperMysql;
 import com.pragma.infrastructure.mysql.repository.ClienteRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;

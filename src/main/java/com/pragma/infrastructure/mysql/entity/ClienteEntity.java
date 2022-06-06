@@ -1,5 +1,6 @@
 package com.pragma.infrastructure.mysql.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -8,8 +9,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.Instant;
 @Entity
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 @Table(name = "clientes")
 public class ClienteEntity {
         @Id
@@ -23,6 +24,6 @@ public class ClienteEntity {
         private String documento;
         private short edad;
         private String ciudadNacimiento;
-        @CreationTimestamp
-        private Instant fechaRegistro;
+        //@CreationTimestamp
+        //private Instant fechaRegistro;
 }
