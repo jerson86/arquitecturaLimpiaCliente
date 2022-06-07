@@ -15,7 +15,7 @@ public class ClienteRestController {
     private final ClienteService clienteService;
     @Autowired
     private ClienteMapper clienteMapper;
-
+    @Autowired
     public ClienteRestController(ClienteService clienteService) {
         this.clienteService = clienteService;
     }

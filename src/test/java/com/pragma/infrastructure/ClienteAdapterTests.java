@@ -36,7 +36,6 @@ public class ClienteAdapterTests {
     @BeforeEach
     void setUp()
     {
-        //clienteAdapter = new ClienteAdapter(clienteRepository);
         cliente = new Cliente();
         cliente.setId(1L);
         cliente.setNombres("Pepito");
